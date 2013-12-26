@@ -9,3 +9,12 @@ def find_allngrams(word, min=1, max=None):
         grams.append(''.join(find_ngrams(word, i + 1)[0]))
 
     return grams
+
+
+class Phrase(str):
+
+    def lower(self):
+        return Phrase(super(Phrase, self).lower())
+
+    def words(self):
+        return self.split()
