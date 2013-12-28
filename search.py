@@ -61,7 +61,8 @@ class TextField(search.TextField):
         TypeError: If value is not a string.
         ValueError: If value is longer than allowed.
         """
-        value = token_filter.create(value)
+        if token_filter:
+            value = token_filter.create(value)
 
         super(TextField, self).__init__(name,
                                         search.search._ConvertToUnicode(value),

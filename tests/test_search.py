@@ -4,6 +4,11 @@ import search
 
 class SearchTest(unittest.TestCase):
 
+    def test_TextField(self):
+        field = search.TextField(name='title', value='horses')
+
+        self.assertEqual(field.value, 'horses')
+
     def test_TextField1(self):
         token_filter = search.EdgeNGramTokenFilter(min_gram_size=1)
         field = search.TextField(name='title',
