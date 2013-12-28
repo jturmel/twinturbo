@@ -8,10 +8,3 @@ class SearchTest(unittest.TestCase):
         result = ['ho', 'hor', 'hors', 'horse', 'horses']
 
         self.assertEqual(search.find_allngrams(word, 2), result)
-
-    def test_phrase(self):
-        p = 'Once upon a time'
-        phrase = search.Phrase(p)
-        result = ['once', 'upon', 'a', 'time']
-
-        self.assertEqual(phrase.lower().words(), result)
