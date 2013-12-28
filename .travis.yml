@@ -6,3 +6,5 @@ script: python -m unittest discover
 before_script:
   - wget http://googleappengine.googlecode.com/files/google_appengine_1.8.8.zip -nv
   - unzip -q google_appengine_1.8.8.zip
+  - echo "/home/travis/build/jturmel/twinturbo/google_appengine" >> ~/virtualenv/python2.7/lib/python2.7/site-packages/gae.pth
+  - echo "import dev_appserver; dev_appserver.fix_sys_path()" >> ~/virtualenv/python2.7/lib/python2.7/site-packages/gae.pth
