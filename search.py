@@ -38,13 +38,14 @@ class EdgeNGramTokenFilter(TokenFilter):
 
 
 class TextField(search.TextField):
-    """A Field that has text content and will will be stored as n-grams
-    starting at 2
+    """A Field that has text content.
 
-    The following example shows a text field named first_name:
-    TextField(name='first_name', value='Robert')
+    The following example shows a text field named signature in Polish:
+    TextField(name='signature', value='brzydka pogoda', language='pl')
 
-    The value will be stored as 'Ro Rob Robe Rober Robert'
+    The following example shows a text field named signature and using a custom
+    token filter:
+    TextField(name='title', value='horses', search.EdgeNGramTokenFilter())
     """
     def __init__(self, name, value=None, language=None, token_filter=None):
         """Initializer.
